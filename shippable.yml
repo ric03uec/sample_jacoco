@@ -6,6 +6,8 @@ jdk:
 build:
   pre_ci:
     - curl -L https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    - ls -al /usr/local/bin
+    - sudo docker --version
     - sudo docker-compose --version
   ci:
     # Create folders for test and code coverage
