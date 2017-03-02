@@ -5,10 +5,10 @@ jdk:
 
 build:
   pre_ci:
-    - curl -L https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-    - ls -al /usr/local/bin
+    - curl -SsL https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
     - sudo docker --version
-    - sudo ./usr/local/bin/docker-compose --version
+    - chmod +x /usr/local/bin/docker-compose
+    - sudo docker-compose --version
   ci:
     # Create folders for test and code coverage
     - mkdir -p shippable/codecoverage
