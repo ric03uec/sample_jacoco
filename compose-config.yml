@@ -1,0 +1,8 @@
+redis:
+  image: shipimg/rdsbase:master.698
+  privileged: true
+  net: "host"
+  ports:
+    - "6379:6379"
+  volumes:
+    - ./build/fo0:/tmp/data 
