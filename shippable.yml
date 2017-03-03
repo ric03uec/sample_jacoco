@@ -9,6 +9,11 @@ build:
     - sudo docker --version
     - chmod +x /usr/local/bin/docker-compose
     - sudo docker-compose --version
+    - mkdir -p /build/myfiles/mounted-dir
+    - cp -vr ./compose-config.yml /build/myfiles/compose-config.yml
+    - cp -vr ./mounted-dir/* /build/myfiles/mounted-dir/
+    - sudo docker-compose run /build/myfiles/compose-config.yml
+    - sudo docker ps
   ci:
     # Create folders for test and code coverage
     - mkdir -p shippable/codecoverage
