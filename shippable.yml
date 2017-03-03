@@ -12,7 +12,7 @@ build:
     - mkdir -p /build/myfiles/mounted-dir
     - cp -vr ./compose-config.yml /build/myfiles/compose-config.yml
     - cp -vr ./mounted-dir/* /build/myfiles/mounted-dir/
-    - sudo docker-compose run /build/myfiles/compose-config.yml
+    - sudo docker-compose -f /build/myfiles/compose-config.yml up
     - sudo docker ps
   ci:
     # Create folders for test and code coverage
