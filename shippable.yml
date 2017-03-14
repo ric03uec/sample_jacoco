@@ -20,3 +20,6 @@ build:
     - mvn install
     - cp -r target shippable/codecoverage
     - env
+ 
+  push:
+    - sudo docker-compose -f /build/myfiles/compose-config.yml down
