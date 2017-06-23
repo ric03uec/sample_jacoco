@@ -21,7 +21,7 @@ build:
     - mvn install
     - cp -r target shippable/codecoverage
     - echo "data" >> shippable/codecoverage/data.txt    
-    - ln -s valid_link shippable/codecoverage/data.txt
+    - ln -s shippable/codecoverage/data.txt shippable/codecoverage/data_link.txt
     - ls -al shippable/codecoverage
  #- ln -s does_not_exist shippable/codecoverage/this_link_does_not_exist
  
