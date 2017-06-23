@@ -20,8 +20,10 @@ build:
     - env
     - mvn install
     - cp -r target shippable/codecoverage
-    - ln -s does_not_exist shippable/codecoverage/this_link_does_not_exist
+    - echo "data" >> shippable/codecoverage/data.txt    
+    - ln -s valid_link shippable/codecoverage/data.txt
     - ls -al shippable/codecoverage
+ #- ln -s does_not_exist shippable/codecoverage/this_link_does_not_exist
  
   push:
     - sudo docker-compose -f /build/myfiles/compose-config.yml down
