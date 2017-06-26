@@ -4,6 +4,11 @@ jdk:
   - oraclejdk7
 
 build:
+  pre_ci_boot:
+    image_name: drydock/u14javall
+    image_tag: v5.7.1
+    pull: true
+    
   pre_ci:
     - curl -SsL https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
     - sudo docker --version
