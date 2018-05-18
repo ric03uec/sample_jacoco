@@ -2,6 +2,9 @@ language: java
 
 jdk:
   - oraclejdk7
+  - oraclejdk8
+  - oraclejdk9
+  - oraclejdk10
 
 build:
   pre_ci_boot:
@@ -10,26 +13,23 @@ build:
     pull: true
     
   pre_ci:
-    - curl -SsL https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    #- curl -SsL https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
     - sudo docker --version
-    - chmod +x /usr/local/bin/docker-compose
-    - sudo docker-compose --version
-    - mkdir -p /build/myfiles/mounted-dir
-    - cp -vr ./compose-config.yml /build/myfiles/compose-config.yml
-    - cp -vr ./mounted-dir/* /build/myfiles/mounted-dir/
+    #- chmod +x /usr/local/bin/docker-compose
+    #- sudo docker-compose --version
+    #- mkdir -p /build/myfiles/mounted-dir
+    #- cp -vr ./compose-config.yml /build/myfiles/compose-config.yml
+    #- cp -vr ./mounted-dir/* /build/myfiles/mounted-dir/
     #- sudo docker-compose -f /build/myfiles/compose-config.yml up -d 
     #- sudo docker ps
   ci:
     # Create folders for test and code coverage
-    - mkdir -p shippable/codecoverage
+    #- mkdir -p shippable/codecoverage
     - env
-    - mvn install
-    - cp -r target shippable/codecoverage
-    - echo "data" >> shippable/codecoverage/data.txt    
+    #- mvn install
+    #- cp -r target shippable/codecoverage
+    #- echo "data" >> shippable/codecoverage/data.txt    
     
  #- ln -s shippable/codecoverage/data.txt shippable/codecoverage/data_link.txt
  #- ls -al shippable/codecoverage
  #- ln -s does_not_exist shippable/codecoverage/this_link_does_not_exist
- 
-  push:
-    - sudo docker-compose -f /build/myfiles/compose-config.yml down
