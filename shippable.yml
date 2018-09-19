@@ -27,7 +27,7 @@ build:
     - mvn --version
     - echo "============================"
     # works for oraclejdk10
-    - . shipctl jdk set oraclejdk10
+    - shipctl jdk set oraclejdk10
     - java --version
     - mvn --version
     
