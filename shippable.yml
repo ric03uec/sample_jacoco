@@ -20,13 +20,15 @@ build:
   ci:
     # Create folders for test and code coverage
     #- mkdir -p shippable/codecoverage
-    
-    # works for oraclejdk10
-    #- java --version
-    #- mvn --version
-    
     # works for oraclejdk8
     - java -version
+    - mvn --version
+    - echo "============================"
+    # works for oraclejdk10
+    - . shipctl jdk set oraclejdk10
+    - java --version
+    - mvn --version
+    
     #- mvn install
     #- cp -r target shippable/codecoverage
     #- echo "data" >> shippable/codecoverage/data.txt    
