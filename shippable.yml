@@ -29,7 +29,7 @@ build:
     # works for oraclejdk10
     #- shipctl jdk set oraclejdk10
     #- eval "shipctl jdk set oraclejdk10"
-    - . shipctl jdk set oraclejdk10
+    - source shipctl jdk set oraclejdk10
     - java --version
     - mvn --version
     
