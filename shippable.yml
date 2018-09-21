@@ -20,7 +20,7 @@ build:
   ci:
     # Create folders for test and code coverage
     #- mkdir -p shippable/codecoverage
-    #- wget -O /usr/local/bin/shipctl https://raw.githubusercontent.com/ric03uec/node/h_2589_jdk/shipctl/x86_64/Ubuntu_16.04/shipctl
+    - wget -O /usr/local/bin/shipctl https://raw.githubusercontent.com/Shippable/node/master/shipctl/x86_64/Ubuntu_16.04/shipctl
     #- wget -O /usr/local/bin/shippable_jdk https://raw.githubusercontent.com/ric03uec/node/h_2589_jdk/shipctl/x86_64/Ubuntu_16.04/shippable_jdk
     
     # works for oraclejdk10
