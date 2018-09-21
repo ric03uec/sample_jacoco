@@ -1,9 +1,9 @@
 language: java
 
 jdk:
-  - oraclejdk8
+  - oraclejdk10
+  #- oraclejdk8
 
-#  - oraclejdk10
 
 build:
     
@@ -22,17 +22,18 @@ build:
     #- mkdir -p shippable/codecoverage
     #- wget -O /usr/local/bin/shipctl https://raw.githubusercontent.com/ric03uec/node/h_2589_jdk/shipctl/x86_64/Ubuntu_16.04/shipctl
     #- wget -O /usr/local/bin/shippable_jdk https://raw.githubusercontent.com/ric03uec/node/h_2589_jdk/shipctl/x86_64/Ubuntu_16.04/shippable_jdk
-    # works for oraclejdk8
-    - java -version
-    - mvn --version
-    - echo "============================"
+    
     # works for oraclejdk10
     #- shipctl jdk set oraclejdk10
     #- eval "shipctl jdk set oraclejdk10"
-    - source shipctl jdk set oraclejdk10
-    - java --version
+    - java --version    
+    - mvn --version    
+    - echo "============================"
+    - source shipctl jdk set oraclejdk8
+    # works for oraclejdk8
+    - java -version
     - mvn --version
-    
+        
     #- mvn install
     #- cp -r target shippable/codecoverage
     #- echo "data" >> shippable/codecoverage/data.txt    
