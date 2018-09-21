@@ -27,7 +27,8 @@ build:
     #- shipctl jdk set oraclejdk10
     #- eval "shipctl jdk set oraclejdk10"
     - java --version    
-    - mvn --version    
+    - mvn --version
+    - sleep 10
     - echo "============================"
     - source shipctl jdk set oraclejdk8
     # works for oraclejdk8
