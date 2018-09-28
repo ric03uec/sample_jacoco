@@ -26,6 +26,7 @@ build:
     # works for oraclejdk10
     #- shipctl jdk set oraclejdk10
     #- eval "shipctl jdk set oraclejdk10"
+    - cat /usr/local/bin/shipctl
     - java --version    
     - mvn --version
     - sleep 10
