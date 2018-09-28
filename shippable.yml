@@ -1,8 +1,9 @@
 language: java
 
 jdk:
-  - oraclejdk10
-  #- oraclejdk8
+  - oraclejdk8
+  #- oraclejdk10
+  
 
 
 build:
@@ -26,14 +27,14 @@ build:
     # works for oraclejdk10
     #- shipctl jdk set oraclejdk10
     #- eval "shipctl jdk set oraclejdk10"
-    - cat /usr/local/bin/shipctl
-    - java --version    
+    #- cat /usr/local/bin/shipctl
+    - java -version
     - mvn --version
     - sleep 10
     - echo "============================"
-    - source shipctl jdk set oraclejdk8
-    # works for oraclejdk8
-    - java -version
+    - shipctl jdk set oraclejdk10
+    # works for oraclejdk10
+    - java --version
     - mvn --version
         
     #- mvn install
