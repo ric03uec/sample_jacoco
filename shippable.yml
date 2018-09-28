@@ -39,7 +39,7 @@ build:
     - echo "============================"
     - shipctl jdk set oraclejdk8
     # works for oraclejdk10
-    - java --version
+    - java -version
     - mvn -version
     
         
