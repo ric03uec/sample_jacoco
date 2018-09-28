@@ -36,6 +36,12 @@ build:
     # works for oraclejdk10
     - java --version
     - mvn --version
+    - echo "============================"
+    - shipctl jdk set oraclejdk8
+    # works for oraclejdk10
+    - java --version
+    - mvn -version
+    
         
     #- mvn install
     #- cp -r target shippable/codecoverage
